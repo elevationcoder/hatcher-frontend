@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class FlockContainer extends Component {
+class FlocksContainer extends Component {
   render() {
-    return <div></div>;
+    return <div>Flocks Container</div>;
   }
 }
 
-export default FlockContainer;
+export default FlocksContainer;
