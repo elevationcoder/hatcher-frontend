@@ -7,9 +7,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import flockReducer from "./reducers/flockReducer";
 
-const enhancer =
-  window.__REDUX_DEVTOOLS_EXTENSION__ /
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(flockReducer, enhancer(applyMiddleware(thunk)));
 
 ReactDOM.render(

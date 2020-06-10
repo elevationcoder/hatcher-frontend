@@ -1,3 +1,3 @@
 export default function flockReducer(state = { flocks: [] }, action) {
-  return state;
+  return action.payload;
 }

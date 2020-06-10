@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import fetchFlocks from "./actions/fetchFlocks";
 class App extends Component {
   componentDidMount() {
-    fetch("http://localhost:3001/egg_bundles/1/")
-      .then((resp) => resp.json())
-      .then((data) => console.log(data));
+    this.props.fetchFlocks({
+      type: "FETCH_FLOCKS",
+      payload: { name: "Black Sussex" },
+    });
   }
   render() {
     return <div className="App">App</div>;
   }
 }
 
-export default App;
+export default connect(null, { fetchFlocks })(App);
