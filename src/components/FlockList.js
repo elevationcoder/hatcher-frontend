@@ -1,12 +1,12 @@
 import React from "react";
-
+import ShowFlock from "./ShowFlock";
 const FlockList = (props) => {
   return (
     <div>
       {props.flocks.map((flock) => (
-        <li key={flock.id}>
-          {flock.name} - {flock.breed}
-        </li>
+        <div key={flock.id}>
+          <ShowFlock showFlock={flock} />
+        </div>
       ))}
     </div>
   );

@@ -3,6 +3,7 @@ import FlockList from "../components/FlockList";
 import NewFlockInput from "../components/NewFlockInput";
 import { connect } from "react-redux";
 import fetchFlocks from "../actions/fetchFlocks";
+import { Route } from "react-router-dom";
 class FlocksContainer extends Component {
   componentDidMount() {
     this.props.fetchFlocks();
@@ -11,8 +12,11 @@ class FlocksContainer extends Component {
   render() {
     return (
       <div>
-        <FlockList flocks={this.props.flocks} />
-        <NewFlockInput />
+        <Route path="/flocks/new" component={NewFlockInput} />
+        <Route
+          path="/flocks"
+          render={() => <FlockList flocks={this.props.flocks} />}
+        />
       </div>
     );
   }

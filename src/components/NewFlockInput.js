@@ -18,6 +18,12 @@ class NewFlockInput extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.addFlock(this.state);
+    this.setState({
+      name: "",
+      breed: "",
+      quantity: "",
+      diet: "",
+    });
   };
   render() {
     return (
