@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FlockList from "../components/FlockList";
+import NewFlockInput from "../components/NewFlockInput";
 
 class FlocksContainer extends Component {
   render() {
