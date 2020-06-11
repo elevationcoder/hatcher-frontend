@@ -1,5 +1,12 @@
 export default function fetchFlocks() {
-  //   fetch("http://localhost:3001/flocks")
-  //     .then((resp) => resp.json())
-  //     .then((flock) => console.log(flock));
+  return (dispatch) => {
+    fetch("http://localhost:3001/flocks")
+      .then((resp) => resp.json())
+      .then((flock) =>
+        dispatch({
+          type: "FETCH_FLOCKS",
+          payload: flock,
+        })
+      );
+  };
 }
