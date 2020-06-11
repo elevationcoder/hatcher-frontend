@@ -7,6 +7,7 @@ class FlocksContainer extends Component {
   componentDidMount() {
     this.props.fetchFlocks();
   }
+
   render() {
     return (
       <div>
