@@ -8,6 +8,7 @@ import { Route, Switch } from "react-router-dom";
 
 class FlocksContainer extends Component {
   componentDidMount() {
+    console.log(fetchFlocks());
     this.props.fetchFlocks();
   }
 

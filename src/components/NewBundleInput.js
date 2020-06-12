@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import addBundle from "../actions/addBundle";
 import { connect } from "react-redux";
-
 // THIS COMPONENT IS USED TO RENDER NEW BUNDLE FORM
 // IS RESPONSIBLE FOR ADDING A NEW INSTANCE AND UPDATING STORE
 // AND API
@@ -26,7 +26,21 @@ class NewBundleInput extends Component {
   };
 
   handleOnSubmit = (event) => {
+    console.log(event);
     event.preventDefault();
+    this.props.addBundle(this.state, this.props.flock.id);
+    // this.setState({
+    //   batch_number: "",
+    //   amount: "",
+    //   amount_fertilized: "",
+    //   amount_hatched: "",
+    //   start_date: "",
+    //   first_hatch: "",
+    //   init_temp: "",
+    //   init_humid: "",
+    //   lockdown_temp: "",
+    //   lockdown_humid: "",
+    // });
   };
 
   // BEGIN RENDER OF FORM FIELD
@@ -35,7 +49,7 @@ class NewBundleInput extends Component {
     return (
       <div className="new-bundle-container">
         <h3>Add a New Bundle Below</h3>
-        <form className="new-bundle-input">
+        <form onSubmit={this.handleOnSubmit} className="new-bundle-input">
           <label>Incubation Start Date and Time: </label>
           <br />
           <input
@@ -126,7 +140,8 @@ class NewBundleInput extends Component {
   }
 }
 
-export default connect(null)(NewBundleInput);
+export default connect(null, { addBundle })(NewBundleInput);
+
 /* <label>Select Breed: </label>
           <select name="breed"className="breed-dropdown">
             <option>White Leghorn</option>
