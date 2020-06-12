@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addFlock } from "../actions/addFlock";
+
+// THIS COMPONENT IS RESPONSIBLE FOR
+// RENDERING NEW FLOCK ENTRY AND UPDATING API AND STORE
+
 class NewFlockInput extends Component {
   state = {
     name: "",
     breed: "",
     quantity: "",
     diet: "",
-  };
+  }; // THIS STATE IS NOT EXPORTED
+
+  // FORM CONTROL METHODS
 
   handleOnChange = (event) => {
     this.setState({
@@ -25,6 +31,8 @@ class NewFlockInput extends Component {
       diet: "",
     });
   };
+
+  // START OF FORM RENDERING
   render() {
     return (
       <div>
@@ -66,6 +74,12 @@ class NewFlockInput extends Component {
       </div>
     );
   }
+  // END OF FORM RENDERING
 }
 
+// NO THIS.STATE SENT TO STORE
+
 export default connect(null, { addFlock })(NewFlockInput);
+
+// addFlock ACTION CAN BE FOUND IN THE addFlock.js
+//FILE UNDER THE ACTIONS FOLDER
