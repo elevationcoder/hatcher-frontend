@@ -1,5 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import BundleContainer from "../containers/BundleContainer";
+import Bundles from "./Bundles";
 const ShowFlock = (props) => {
   console.log(props);
 
@@ -20,7 +22,11 @@ const ShowFlock = (props) => {
               <li>Batch Number: {bundles.batch_number}</li>
             ))
           : "You haven't added a new bundle yet!"}
+        {/* <li>
+          <Bundles />
+        </li> */}
       </ul>
+      <BundleContainer />
     </div>
   );
 };
