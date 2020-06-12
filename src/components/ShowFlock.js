@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Redirect } from "react-router-dom";
 const ShowFlock = (props) => {
   console.log(props);
 
@@ -8,10 +8,19 @@ const ShowFlock = (props) => {
 
   return (
     <div>
-      Flock / Name ( {flock ? flock.name : null} )
+      {/* {flock ? null : <Redirect to="/flocks" />} */}
+      <h2>Flock ( {flock ? flock.name : null} )</h2>
       <li>Breed __ {flock ? flock.breed : null}</li>
       <li>Number in Flock __ {flock ? flock.quantity : null}</li>
       <li>Primary Diet __ {flock ? flock.diet : null}</li>
+      <ul>
+        Egg Bundles __{" "}
+        {flock
+          ? flock.egg_bundles.map((bundles) => (
+              <li>Batch Number: {bundles.batch_number}</li>
+            ))
+          : "You haven't added a new bundle yet!"}
+      </ul>
     </div>
   );
 };
