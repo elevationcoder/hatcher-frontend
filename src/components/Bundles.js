@@ -1,11 +1,12 @@
 import React from "react";
-
+// THIS COMPONENT SHOWS SPECIFIC BUNDLE
 const Bundles = (props) => {
   return (
     <div className="egg-bundle-container">
       <h3>Egg Bundles</h3>
       {props.egg_bundles &&
         props.egg_bundles.map((bundle, ind) => (
+          // START OF INFO FIELD
           <ul className="bundle-info" key={ind}>
             <li>
               Bundle Number:{" "}
@@ -55,6 +56,7 @@ const Bundles = (props) => {
             </li>
           </ul>
         ))}
+      {/* END OF INFO FIELD */}
     </div>
   );
 };
