@@ -8,10 +8,14 @@ const Bundles = (props) => {
         props.egg_bundles.map((bundle, ind) => (
           // START OF INFO FIELD
           <ul className="bundle-info" key={ind}>
-            <li>
-              Bundle Number:{" "}
-              <span className="bundle-info-number">{bundle.batch_number}</span>
-            </li>
+            <h3>
+              <li>
+                Bundle Number:{" "}
+                <span className="bundle-info-number">
+                  {bundle.batch_number}
+                </span>
+              </li>
+            </h3>
             <li>
               Bundle Amount(eggs):{" "}
               <span className="bundle-info-number">{bundle.amount}</span>
@@ -39,7 +43,7 @@ const Bundles = (props) => {
               <span className="bundle-info-number">{bundle.lockdown_temp}</span>
             </li>
             <li>
-              Lockdown Humidity (Days 18-21)
+              Lockdown Humidity (Days 18-21):{" "}
               <span className="bundle-info-number">
                 {bundle.lockdown_humid}
               </span>
