@@ -26,7 +26,7 @@ const ShowFlock = (props) => {
           <Bundles />
         </li> */}
       </ul>
-      <BundleContainer />
+      <BundleContainer flock={flock} />
     </div>
   );
 };

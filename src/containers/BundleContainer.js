@@ -7,7 +7,9 @@ class BundleContainer extends Component {
     return (
       <div>
         <NewBundleInput />
-        <Bundles />
+        <Bundles
+          egg_bundles={this.props.flock && this.props.flock.egg_bundles}
+        />
       </div>
     );
   }
