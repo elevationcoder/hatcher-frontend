@@ -1,6 +1,12 @@
 import React from "react";
+import deleteBundle from "../actions/deleteBundle";
+import { connect } from "react-redux";
 // THIS COMPONENT SHOWS SPECIFIC BUNDLE
+
 const Bundles = (props) => {
+  const handleDelete = (bundle) => {
+    props.deleteBundle(bundle.id, bundle.flock_id);
+  };
   return (
     <div className="egg-bundle-container">
       <h3>Egg Bundles</h3>
@@ -58,6 +64,7 @@ const Bundles = (props) => {
                 {bundle.amount_hatched}
               </span>
             </li>
+            <button onClick={() => handleDelete(bundle)}>Delete</button>
           </ul>
         ))}
       {/* END OF INFO FIELD */}
@@ -65,4 +72,4 @@ const Bundles = (props) => {
   );
 };
 
-export default Bundles;
+export default connect(null, { deleteBundle })(Bundles);

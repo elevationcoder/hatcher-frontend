@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import BundleContainer from "../containers/BundleContainer";
 import Bundles from "./Bundles";
+import { connect } from "react-redux";
 
 // THIS COMPONENT SHOWS A SINGLE ENTRY
 
@@ -34,4 +35,4 @@ const ShowFlock = (props) => {
   );
 };
 
-export default ShowFlock;
+export default connect()(ShowFlock);
