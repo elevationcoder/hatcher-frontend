@@ -6,10 +6,12 @@ export default function flockReducer(state = { flocks: [] }, action) {
     case "ADD_FLOCK":
       return { ...state, flocks: [...state.flocks, action.payload] };
     case "ADD_BUNDLE":
+      // debugger;
       let flock = state.flocks.map((flock) => {
         if (flock.id === action.payload.id) {
           return action.payload;
         } else {
+          debugger;
           return flock;
         }
       });

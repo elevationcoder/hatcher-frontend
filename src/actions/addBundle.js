@@ -6,7 +6,7 @@ export const addBundle = (eggBundles, flockId) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(eggBundles, flockId),
+      body: JSON.stringify(flockId, eggBundles),
     })
       .then((resp) => resp.json())
       .then((bundle) =>

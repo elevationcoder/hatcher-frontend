@@ -7,9 +7,11 @@ import { connect } from "react-redux";
 // THIS COMPONENT SHOWS A SINGLE ENTRY
 
 const ShowFlock = (props) => {
+  // debugger;
   let flock = props.flocks.filter(
     (flock) => flock.id == props.match.params.id
   )[0];
+  // debugger;
 
   return (
     <div>

@@ -4,7 +4,7 @@ import FlocksContainer from "./containers/flockContainer";
 import NewFlockInput from "./components/NewFlockInput";
 
 class App extends Component {
-  componentDidMount() {}
+  // componentDidUpdate()
   render() {
     return (
       <div className="App">

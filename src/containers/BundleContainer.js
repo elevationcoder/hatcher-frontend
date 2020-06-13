@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewBundleInput from "../components/NewBundleInput";
 import Bundles from "../components/Bundles";
+import { connect } from "react-redux";
 class BundleContainer extends Component {
   render() {
     return (
@@ -14,4 +15,10 @@ class BundleContainer extends Component {
   }
 }
 
-export default BundleContainer;
+const mapStateToProps = (state) => {
+  return {
+    flocks: state.flocks,
+  };
+};
+
+export default connect(mapStateToProps)(BundleContainer);
