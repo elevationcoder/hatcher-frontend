@@ -1,9 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import React from "react";
-import { NavLink } from "react-router-dom";
-
 const link = {
   width: "100px",
   padding: "12px",
@@ -31,7 +28,7 @@ class Navbar extends React.Component {
           Dashboard
         </NavLink>
         <NavLink
-          to="/flock"
+          to="/flocks"
           exact
           style={link}
           activeStyle={{
@@ -41,7 +38,7 @@ class Navbar extends React.Component {
           My Flocks
         </NavLink>
         <NavLink
-          to="/flock/new"
+          to="/flocks/new"
           exact
           style={link}
           activeStyle={{
