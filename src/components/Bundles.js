@@ -1,20 +1,25 @@
 import React from "react";
 import deleteBundle from "../actions/deleteBundle";
 import { connect } from "react-redux";
-
+import { Route, Switch } from "react-router-dom";
 // THIS COMPONENT SHOWS SPECIFIC BUNDLE
-
+import editBundle from "../actions/editBundle";
 const Bundles = (props) => {
   const handleDelete = (bundle) => {
     props.deleteBundle(bundle.id, bundle.flock_id);
   };
+
+  const handleDivClick = (event) => {};
   return (
     <div className="egg-bundle-container">
       <h3>Egg Bundles</h3>
       {props.egg_bundles &&
         props.egg_bundles.map((bundle, ind) => (
           // START OF INFO FIELD
-          <div className="bundle-card">
+          <div
+            onClick={(event) => console.log(event.egg_bundles)}
+            className="bundle-card"
+          >
             <ul className="bundle-info" key={ind}>
               <h3>
                 Bundle Number:{" "}
@@ -66,6 +71,16 @@ const Bundles = (props) => {
                   {bundle.amount_hatched}
                 </span>
               </li>
+              {/* <NavLink
+                to="/flocks/new"
+                exact
+                // style={link}
+                // activeStyle={{
+                //   background: "darkblue",
+                // }}
+              >
+                Add New Flock
+              </NavLink> */}
               <button onClick={() => handleDelete(bundle)}>Delete</button>
             </ul>
           </div>
@@ -75,4 +90,4 @@ const Bundles = (props) => {
   );
 };
 
-export default connect(null, { deleteBundle })(Bundles);
+export default connect(null, { deleteBundle, editBundle })(Bundles);

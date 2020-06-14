@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import addBundle from "../actions/addBundle";
+import editBundle from "../actions/editBundle";
 import { connect } from "react-redux";
 // THIS COMPONENT IS USED TO RENDER NEW BUNDLE FORM
 // IS RESPONSIBLE FOR ADDING A NEW INSTANCE AND UPDATING STORE
 // AND API
 
-class NewBundleInput extends Component {
+class BundleEdit extends Component {
   state = {
     batch_number: "",
     amount: "",
@@ -28,19 +28,19 @@ class NewBundleInput extends Component {
   handleOnSubmit = (event) => {
     console.log(event);
     event.preventDefault();
-    this.props.addBundle(this.state, this.props.flock.id);
-    // this.setState({
-    //   batch_number: "",
-    //   amount: "",
-    //   amount_fertilized: "",
-    //   amount_hatched: "",
-    //   start_date: "",
-    //   first_hatch: "",
-    //   init_temp: "",
-    //   init_humid: "",
-    //   lockdown_temp: "",
-    //   lockdown_humid: "",
-    // });
+    this.props.editBundle(this.state, this.props.flock.id);
+    this.setState({
+      batch_number: "",
+      amount: "",
+      amount_fertilized: "",
+      amount_hatched: "",
+      start_date: "",
+      first_hatch: "",
+      init_temp: "",
+      init_humid: "",
+      lockdown_temp: "",
+      lockdown_humid: "",
+    });
   };
 
   // BEGIN RENDER OF FORM FIELD
@@ -140,7 +140,7 @@ class NewBundleInput extends Component {
   }
 }
 
-export default connect(null, { addBundle })(NewBundleInput);
+export default connect(null, { editBundle })(BundleEdit);
 
 /* <label>Select Breed: </label>
           <select name="breed"className="breed-dropdown">
