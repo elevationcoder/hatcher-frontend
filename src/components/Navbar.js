@@ -2,12 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const link = {
-  width: "100px",
+  width: "120px",
   padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
+  margin: "0 3px 3px",
+  background: "navy",
   textDecoration: "none",
   color: "white",
+  borderRadius: "4px",
+  float: "right",
+  textAlign: "center",
 };
 
 class Navbar extends React.Component {

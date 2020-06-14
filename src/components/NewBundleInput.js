@@ -49,9 +49,9 @@ class NewBundleInput extends Component {
     return (
       <div className="new-bundle-container">
         <h2>Add a New Bundle Below</h2>
-        <form onSubmit={this.handleOnSubmit} className="new-bundle-input">
+        <form onSubmit={this.handleOnSubmit} className="new-bundle-input-form">
           <label>Incubation Start Date and Time: </label>
-          <br />
+          {/* <br /> */}
           <input
             name="start_date"
             type="datetime-local"
@@ -60,7 +60,7 @@ class NewBundleInput extends Component {
           />
           <br />
           <label>First Egg Hatch Date and Time: </label>
-          <br />
+          {/* <br /> */}
           <input
             name="first_hatch"
             type="datetime-local"
@@ -68,9 +68,9 @@ class NewBundleInput extends Component {
             value={this.state.first_hatch}
             onChange={this.handleOnChange}
           />
-          <br />
-          <br />
-          <div className="bundle-form-field">
+          {/* <br /> */}
+          {/* <br /> */}
+          <div className="bundle-input-form-field">
             <input
               name="batch_number"
               type="text"
@@ -85,7 +85,7 @@ class NewBundleInput extends Component {
               value={this.state.amount}
               onChange={this.handleOnChange}
             />
-            <br />
+            {/* <br /> */}
             <input
               name="init_temp"
               type="text"
@@ -100,7 +100,7 @@ class NewBundleInput extends Component {
               value={this.state.init_humid}
               onChange={this.handleOnChange}
             />
-            <br />
+            {/* <br /> */}
             <input
               name="amount_fertilized"
               type="text"
@@ -115,7 +115,7 @@ class NewBundleInput extends Component {
               value={this.state.lockdown_temp}
               onChange={this.handleOnChange}
             />
-            <br />
+            {/* <br /> */}
             <input
               name="lockdown_humid"
               type="text"
