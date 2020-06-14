@@ -17,6 +17,7 @@ class BundleContainer extends Component {
             egg_bundles={this.props.flock && this.props.flock.egg_bundles}
           />
           {/* <BundleList egg_bundles={this.props.egg_bundles} /> */}
+          <div></div>
         </div>
       </div>
     );

@@ -39,12 +39,6 @@ class FlocksContainer extends Component {
           {/* <Route exact path="/" render={(routerProps) => (
             <HomePage />
           )}/> */}
-          <Route
-            path="/egg_bundles/"
-            render={(routerProps) => (
-              <ShowBundle {...routerProps} bundles={this.props.egg_bundles} />
-            )}
-          />
         </Switch>
       </div>
     );
