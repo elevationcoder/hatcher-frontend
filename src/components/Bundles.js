@@ -1,6 +1,7 @@
 import React from "react";
 import deleteBundle from "../actions/deleteBundle";
 import { connect } from "react-redux";
+
 // THIS COMPONENT SHOWS SPECIFIC BUNDLE
 
 const Bundles = (props) => {
@@ -13,59 +14,61 @@ const Bundles = (props) => {
       {props.egg_bundles &&
         props.egg_bundles.map((bundle, ind) => (
           // START OF INFO FIELD
-          <ul className="bundle-info" key={ind}>
-            <h3>
-              <li>
+          <div className="bundle-card">
+            <ul className="bundle-info" key={ind}>
+              <h3>
                 Bundle Number:{" "}
                 <span className="bundle-info-number">
                   {bundle.batch_number}
                 </span>
+              </h3>
+              <li>
+                Bundle Amount(eggs):{" "}
+                <span className="bundle-info-number">{bundle.amount}</span>
               </li>
-            </h3>
-            <li>
-              Bundle Amount(eggs):{" "}
-              <span className="bundle-info-number">{bundle.amount}</span>
-            </li>
-            <li>
-              Start of Incubation:{" "}
-              <span className="bundle-info-number">{bundle.start_date}</span>
-            </li>
-            <li>
-              Initial Temp. (Days 1-18):{" "}
-              <span className="bundle-info-number">{bundle.init_temp}</span>
-            </li>
-            <li>
-              Initial Humidity (Days 1-18):{" "}
-              <span className="bundle-info-number">{bundle.init_humid}</span>
-            </li>
-            <li>
-              Amount Fertilized:{" "}
-              <span className="bundle-info-number">
-                {bundle.amount_fertilized}
-              </span>
-            </li>
-            <li>
-              Lockdown Temp. (Days 18-21):{" "}
-              <span className="bundle-info-number">{bundle.lockdown_temp}</span>
-            </li>
-            <li>
-              Lockdown Humidity (Days 18-21):{" "}
-              <span className="bundle-info-number">
-                {bundle.lockdown_humid}
-              </span>
-            </li>
-            <li>
-              Date of First Hatch:{" "}
-              <span className="bundle-info-number">{bundle.first_hatch}</span>
-            </li>
-            <li>
-              Amount Hatched:{" "}
-              <span className="bundle-info-number">
-                {bundle.amount_hatched}
-              </span>
-            </li>
-            <button onClick={() => handleDelete(bundle)}>Delete</button>
-          </ul>
+              <li>
+                Start of Incubation:{" "}
+                <span className="bundle-info-number">{bundle.start_date}</span>
+              </li>
+              <li>
+                Initial Temp. (Days 1-18):{" "}
+                <span className="bundle-info-number">{bundle.init_temp}</span>
+              </li>
+              <li>
+                Initial Humidity (Days 1-18):{" "}
+                <span className="bundle-info-number">{bundle.init_humid}</span>
+              </li>
+              <li>
+                Amount Fertilized:{" "}
+                <span className="bundle-info-number">
+                  {bundle.amount_fertilized}
+                </span>
+              </li>
+              <li>
+                Lockdown Temp. (Days 18-21):{" "}
+                <span className="bundle-info-number">
+                  {bundle.lockdown_temp}
+                </span>
+              </li>
+              <li>
+                Lockdown Humidity (Days 18-21):{" "}
+                <span className="bundle-info-number">
+                  {bundle.lockdown_humid}
+                </span>
+              </li>
+              <li>
+                Date of First Hatch:{" "}
+                <span className="bundle-info-number">{bundle.first_hatch}</span>
+              </li>
+              <li>
+                Amount Hatched:{" "}
+                <span className="bundle-info-number">
+                  {bundle.amount_hatched}
+                </span>
+              </li>
+              <button onClick={() => handleDelete(bundle)}>Delete</button>
+            </ul>
+          </div>
         ))}
       {/* END OF INFO FIELD */}
     </div>

@@ -14,12 +14,16 @@ const ShowFlock = (props) => {
   // debugger;
 
   return (
-    <div>
+    <div className="flock-info-container">
       {/* {flock ? null : <Redirect to="/flocks" />} */}
-      <h2>Flock ( {flock ? flock.name : null} )</h2>
-      <li>Breed __ {flock ? flock.breed : null}</li>
-      <li>Number in Flock __ {flock ? flock.quantity : null}</li>
-      <li>Primary Diet __ {flock ? flock.diet : null}</li>
+      <h2 className="flock-info-name">Flock ( {flock ? flock.name : null} )</h2>
+      <li className="flock-info-item">Breed __ {flock ? flock.breed : null}</li>
+      <li className="flock-info-item">
+        Number in Flock __ {flock ? flock.quantity : null}
+      </li>
+      <li className="flock-info-item">
+        Primary Diet __ {flock ? flock.diet : null}
+      </li>
       {/* <ul>
         Egg Bundles __{" "}
         {flock
@@ -32,7 +36,9 @@ const ShowFlock = (props) => {
         </li> */}
       {/* </ul> */}
       <br />
-      <BundleContainer flock={flock} />
+      <div className="flocks-bundle-container">
+        <BundleContainer flock={flock} />
+      </div>
     </div>
   );
 };

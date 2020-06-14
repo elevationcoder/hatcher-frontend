@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import fetchFlocks from "../actions/fetchFlocks";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import "../styles.css";
 class FlocksContainer extends Component {
   componentDidMount() {
     console.log(fetchFlocks());
@@ -16,6 +17,7 @@ class FlocksContainer extends Component {
     return (
       <div>
         <Navbar />
+        <br />
         <Switch>
           <Route path="/flocks/new" component={NewFlockInput} />
           <Route

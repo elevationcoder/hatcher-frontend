@@ -48,7 +48,7 @@ class NewBundleInput extends Component {
   render() {
     return (
       <div className="new-bundle-container">
-        <h3>Add a New Bundle Below</h3>
+        <h2>Add a New Bundle Below</h2>
         <form onSubmit={this.handleOnSubmit} className="new-bundle-input">
           <label>Incubation Start Date and Time: </label>
           <br />
