@@ -2,14 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import flockReducer from "./reducers/flockReducer";
+import bundleReducer from "./reducers/bundleReducer";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(flockReducer, enhancer(applyMiddleware(thunk)));
+const rootReducer = combineReducers({
+  flockReducer,
+  bundleReducer,
+});
+const store = createStore(rootReducer, enhancer(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
