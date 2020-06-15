@@ -19,14 +19,14 @@ export default function flockReducer(state = [], action) {
     case "DELETE_BUNDLE":
       // debugger;
       return state.flocks.filter((f) => f.id !== action.payload.id);
-    // let flocks = state.flocks.map((flock) => {
-    //   if (flock.id === action.payload.id) {
-    //     return action.payload;
-    //   } else {
-    //     return flock;
-    //   }
-    // });
-    // return { ...state, flocks: flocks };
+      let flocks = state.flocks.map((flock) => {
+        if (flock.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return flock;
+        }
+      });
+      return { ...state, flocks: flocks };
     default:
       return state;
   }
