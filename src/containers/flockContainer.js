@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FlockList from "../components/FlockList";
 import NewFlockInput from "../components/NewFlockInput";
+import HomePageContainer from "./HomePageContainer";
 import ShowFlock from "../components/ShowFlock";
 import { connect } from "react-redux";
 import fetchFlocks from "../actions/fetchFlocks";
@@ -26,7 +27,11 @@ class FlocksContainer extends Component {
           <Route
             path="/flocks/:id"
             render={(routerProps) => (
-              <ShowFlock {...routerProps} flocks={this.props.flocks} />
+              <ShowFlock
+                {...routerProps}
+                flocks={this.props.flocks}
+                egg_bundles={this.props.egg_bundles}
+              />
             )}
           />
           <Route
@@ -36,9 +41,6 @@ class FlocksContainer extends Component {
               <FlockList {...routerProps} flocks={this.props.flocks} />
             )}
           />
-          {/* <Route exact path="/" render={(routerProps) => (
-            <HomePage />
-          )}/> */}
         </Switch>
       </div>
     );
@@ -48,9 +50,8 @@ class FlocksContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     flocks: state.flocks,
+    egg_bundles: state.egg_bundles,
   };
 };
 
-export default connect(mapStateToProps, { fetchFlocks, fetchBundles })(
-  FlocksContainer
-);
+export default connect(mapStateToProps, { fetchFlocks })(FlocksContainer);

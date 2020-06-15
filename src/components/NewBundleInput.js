@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import editBundle from "../actions/editBundle";
+import addBundle from "../actions/addBundle";
 import { connect } from "react-redux";
 // THIS COMPONENT IS USED TO RENDER NEW BUNDLE FORM
 // IS RESPONSIBLE FOR ADDING A NEW INSTANCE AND UPDATING STORE
 // AND API
 
-class BundleEdit extends Component {
+class NewBundleInput extends Component {
   state = {
     batch_number: "",
     amount: "",
@@ -28,7 +28,8 @@ class BundleEdit extends Component {
   handleOnSubmit = (event) => {
     console.log(event);
     event.preventDefault();
-    this.props.editBundle(this.state, this.props.flock.id);
+    // debugger;
+    this.props.addBundle(this.state, this.props.flock.id);
     this.setState({
       batch_number: "",
       amount: "",
@@ -140,7 +141,13 @@ class BundleEdit extends Component {
   }
 }
 
-export default connect(null, { editBundle })(BundleEdit);
+const mapStateToProps = (state) => {
+  return {
+    egg_bundles: state.egg_bundles,
+  };
+};
+
+export default connect(mapStateToProps, { addBundle })(NewBundleInput);
 
 /* <label>Select Breed: </label>
           <select name="breed"className="breed-dropdown">

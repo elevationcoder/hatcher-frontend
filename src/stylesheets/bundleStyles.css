@@ -70,3 +70,21 @@ input[type="submit"]:hover span:after {
   opacity: 1;
   right: 0;
 }
+.homepage-container {
+  width: 100%;
+  height: 100%;
+  color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  font-size: 36px;
+  text-align: center;
+}
+
+@keyframes example {
+  from {
+    color: red;
+  }
+  to {
+    color: yellow;
+  }
+}

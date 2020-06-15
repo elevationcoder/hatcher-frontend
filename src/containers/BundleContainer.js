@@ -24,10 +24,10 @@ class BundleContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    flocks: state.flocks,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     flocks: state.flocks,
+//   };
+// };
 
 export default connect(null, { fetchBundles })(BundleContainer);

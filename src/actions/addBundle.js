@@ -1,12 +1,12 @@
 export const addBundle = (eggBundles, flockId) => {
   return (dispatch) => {
-    console.log(flockId);
+    console.log(flockId, eggBundles, dispatch);
     fetch(`http://localhost:3001/flocks/${flockId}/egg_bundles`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(flockId, eggBundles),
+      body: JSON.stringify(eggBundles),
     })
       .then((resp) => resp.json())
       .then((bundle) =>

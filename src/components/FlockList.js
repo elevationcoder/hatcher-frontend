@@ -5,9 +5,18 @@ const FlockList = (props) => {
   return (
     <div>
       {props.flocks.map((flock) => (
-        <li key={flock.id}>
-          <Link to={`/flocks/${flock.id}`}>{flock.name}</Link>
-        </li>
+        <div>
+          <ul>
+            <li key={flock.id}>
+              <Link to={`/flocks/${flock.id}`}>{flock.name}</Link>
+              <ul>
+                <li>{flock.breed}</li>
+                <li>{flock.quantity}</li>
+                <li>{flock.diet}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       ))}
     </div>
   );
