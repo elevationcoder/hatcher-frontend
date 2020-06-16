@@ -12,7 +12,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
   flocks: flockReducer,
-  bundleReducer,
+  egg_bundles: bundleReducer,
 });
 const store = createStore(rootReducer, enhancer(applyMiddleware(thunk)));
 

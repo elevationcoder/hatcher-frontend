@@ -51,7 +51,6 @@ class FlocksContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     flocks: state.flocks,
-    egg_bundles: state.egg_bundles,
   };
 };
 

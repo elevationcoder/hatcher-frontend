@@ -1,8 +1,8 @@
-export default function bundleReducer(state = { egg_bundles: [] }, action) {
+export default function bundleReducer(state = [], action) {
   // debugger;
   switch (action.type) {
     case "FETCH_BUNDLES":
-      return { bundles: action.payload };
+      return action.payload;
     default:
       return state;
   }
