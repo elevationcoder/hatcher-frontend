@@ -10,6 +10,7 @@ import ShowBundle from "../components/ShowBundle";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../stylesheets/bundleStyles.css";
+import HomePage from "../components/HomePage";
 class FlocksContainer extends Component {
   componentDidMount() {
     console.log(fetchFlocks());

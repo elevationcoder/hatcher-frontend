@@ -12,7 +12,7 @@ class HomePageContainer extends Component {
   }
   render() {
     return (
-      <div className="homepage-container">
+      <div className="show-bundle-container">
         <br />
         <Switch>
           <Route

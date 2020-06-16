@@ -25,6 +25,16 @@ class Navbar extends React.Component {
             background: "darkblue",
           }}
         >
+          Home
+        </NavLink>
+        <NavLink
+          to="/egg_bundles"
+          exact
+          style={link}
+          activeStyle={{
+            background: "darkblue",
+          }}
+        >
           Dashboard
         </NavLink>
         <NavLink

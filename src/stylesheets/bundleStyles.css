@@ -73,18 +73,19 @@ input[type="submit"]:hover span:after {
 .homepage-container {
   width: 100%;
   height: 100%;
-  color: red;
+  color: purple;
   animation-name: example;
-  animation-duration: 4s;
+  animation-duration: 0.8s;
+  animation-iteration-count: 5;
   font-size: 36px;
   text-align: center;
 }
 
 @keyframes example {
   from {
-    color: red;
+    color: rgb(124, 96, 248);
   }
   to {
-    color: yellow;
+    color: purple;
   }
 }
