@@ -41,7 +41,12 @@ class FlocksContainer extends Component {
               <FlockList {...routerProps} flocks={this.props.flocks} />
             )}
           />
-          <Route exact path="/" component={HomePageContainer} />
+          <Route
+            exact
+            path="/egg_bundles"
+            component={HomePageContainer}
+            egg_bundles={this.props.egg_bundles}
+          />
         </Switch>
       </div>
     );
