@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 const ShowBundle = (props) => {
   debugger;
-  let oneBundle = props.egg_bundles.filter(
+  let oneBundle = props.flocks.egg_bundles.map(
     (bundle) => bundle.id === props.match.params.id
   )[0];
   debugger;

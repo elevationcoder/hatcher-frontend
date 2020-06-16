@@ -6,9 +6,16 @@ const BundleList = (props) => {
   return (
     <div>
       {props.egg_bundles.map((bundles) => (
-        <li key={bundles.id}>
-          <Link to={`/egg_bundles/${bundles.id}`}>{bundles.batch_number}</Link>
-        </li>
+        <div>
+          <ul>
+            <li key={bundles.id}>
+              <Link to={`/egg_bundles/${bundles.id}`}>
+                {bundles.batch_number}
+              </Link>
+            </li>
+            <li>Breed: {bundles.breed}</li>
+          </ul>
+        </div>
       ))}
     </div>
   );

@@ -1,20 +1,22 @@
 import React from "react";
 import ShowFlock from "./ShowFlock";
 import { Route, Link } from "react-router-dom";
+import "../stylesheets/bundleStyles.css";
 const FlockList = (props) => {
   return (
     <div>
+      <br />
+      <br />
       {props.flocks.map((flock) => (
-        <div>
+        <div className="flock-card">
           <ul>
             <li key={flock.id}>
-              <Link to={`/flocks/${flock.id}`}>{flock.name}</Link>
-              <ul>
-                <li>{flock.breed}</li>
-                <li>{flock.quantity}</li>
-                <li>{flock.diet}</li>
-              </ul>
+              <label>Name: </label>
+              <Link to={`/flocks/${flock.id}`}> {flock.name}</Link>
             </li>
+            <li>Breed: {flock.breed}</li>
+            <li>Quantity: {flock.quantity}</li>
+            <li>Primary Diet: {flock.diet}</li>
           </ul>
         </div>
       ))}
