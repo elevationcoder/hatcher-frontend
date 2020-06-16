@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <FlocksContainer />
-        <HomePageContainer />
       </div>
     );
   }
