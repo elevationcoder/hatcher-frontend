@@ -16,22 +16,6 @@ class HomePageContainer extends Component {
       <div className="show-bundle-container">
         <br />
         <Switch>
-          {/* <Route
-            path="/egg_bundles/:id"
-            render={(routerProps) => (
-              <ShowBundle {...routerProps} egg_bundles={this.egg_bundles} />
-            )}
-          /> */}
-          {/* <Route
-            exact
-            path="/egg_bundles"
-            render={(routerProps) => (
-              <BundleList
-                {...routerProps}
-                egg_bundles={this.props.egg_bundles}
-              />
-            )}
-          /> */}
           <Route
             exact
             path="/egg_bundles"

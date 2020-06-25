@@ -2,7 +2,6 @@ import React from "react";
 import ShowFlock from "./ShowFlock";
 import { Route, Link } from "react-router-dom";
 const BundleList = (props) => {
-  // debugger;
   return (
     <div>
       {props.egg_bundles &&

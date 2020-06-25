@@ -57,16 +57,6 @@ class Navbar extends React.Component {
         >
           Add New Flock
         </NavLink>
-        {/* <NavLink
-          to="/flock/:id/"
-          exact
-          style={link}
-          activeStyle={{
-            background: "darkblue",
-          }}
-        >
-          Login
-        </NavLink> */}
       </div>
     );
   }

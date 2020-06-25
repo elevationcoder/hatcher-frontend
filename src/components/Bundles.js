@@ -71,16 +71,6 @@ const Bundles = (props) => {
                   {bundle.amount_hatched}
                 </span>
               </li>
-              {/* <NavLink
-                to="/flocks/new"
-                exact
-                // style={link}
-                // activeStyle={{
-                //   background: "darkblue",
-                // }}
-              >
-                Add New Flock
-              </NavLink> */}
               <button onClick={() => handleDelete(bundle)}>Delete</button>
             </ul>
           </div>

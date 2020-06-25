@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 import fetchBundles from "../actions/fetchBundles";
 import BundleList from "../components/BundleList";
 class BundleContainer extends Component {
-  // componentDidMount() {
-  //   this.props.fetchBundles();
-  // }
   render() {
     return (
       <div>
@@ -16,18 +13,10 @@ class BundleContainer extends Component {
           <Bundles
             egg_bundles={this.props.flock && this.props.flock.egg_bundles}
           />
-          {/* <BundleList egg_bundles={this.props.egg_bundles} /> */}
-          <div></div>
         </div>
       </div>
     );
   }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     flocks: state.flocks,
-//   };
-// };
 
 export default connect(null, { fetchBundles })(BundleContainer);

@@ -47,7 +47,3 @@ const ShowBundle = ({ eggBundle }) => {
 };
 
 export default connect()(ShowBundle);
-
-{
-  /* {flock ? null : <Redirect to="/flocks" />} */
-}
