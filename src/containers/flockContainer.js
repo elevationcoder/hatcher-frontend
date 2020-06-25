@@ -15,7 +15,7 @@ class FlocksContainer extends Component {
   componentDidMount() {
     console.log(fetchFlocks());
     this.props.fetchFlocks();
-    // this.props.fetchBundles();
+    this.props.fetchBundles();
   }
 
   render() {
@@ -26,6 +26,7 @@ class FlocksContainer extends Component {
         <Switch>
           <Route path="/flocks/new" component={NewFlockInput} />
           <Route
+            exact
             path="/flocks/:id"
             render={(routerProps) => (
               <ShowFlock
@@ -45,8 +46,31 @@ class FlocksContainer extends Component {
           <Route
             exact
             path="/egg_bundles"
-            component={HomePageContainer}
-            egg_bundles={this.props.egg_bundles}
+            render={(routerProps) => (
+              <HomePageContainer
+                {...routerProps}
+                flocks={this.props.flocks}
+                egg_bundles={this.props.flocks.egg_bundles}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/flocks/:flockId/egg_bundles/:id"
+            render={(routerProps) =>
+              this.props.flocks.length > 0 ? (
+                <ShowBundle
+                  {...routerProps}
+                  eggBundle={this.props.flocks
+                    .find((flock) => {
+                      return flock.id == routerProps.match.params.flockId;
+                    })
+                    .egg_bundles.find(
+                      (bundle) => bundle.id == routerProps.match.params.id
+                    )}
+                />
+              ) : null
+            }
           />
         </Switch>
       </div>
@@ -60,4 +84,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchFlocks })(FlocksContainer);
+export default connect(mapStateToProps, { fetchFlocks, fetchBundles })(
+  FlocksContainer
+);

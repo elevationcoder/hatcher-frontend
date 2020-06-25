@@ -1,7 +1,7 @@
 import React from "react";
 import deleteBundle from "../actions/deleteBundle";
 import { connect } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 // THIS COMPONENT SHOWS SPECIFIC BUNDLE
 import editBundle from "../actions/editBundle";
 const Bundles = (props) => {
@@ -9,23 +9,23 @@ const Bundles = (props) => {
     props.deleteBundle(bundle.id, bundle.flock_id);
   };
 
-  const handleDivClick = (event) => {};
   return (
     <div className="egg-bundle-container">
       <h3>Egg Bundles</h3>
       {props.egg_bundles &&
         props.egg_bundles.map((bundle, ind) => (
           // START OF INFO FIELD
-          <div
-            onClick={(event) => console.log(event.egg_bundles)}
-            className="bundle-card"
-          >
+          <div className="bundle-card">
             <ul className="bundle-info" key={ind}>
               <h3>
                 Bundle Number:{" "}
-                <span className="bundle-info-number">
-                  {bundle.batch_number}
-                </span>
+                <Link
+                  to={`/flocks/${bundle.flock_id}/egg_bundles/${bundle.id}`}
+                >
+                  <span className="bundle-info-number">
+                    {bundle.batch_number}
+                  </span>
+                </Link>
               </h3>
               <li>
                 Bundle Amount(eggs):{" "}

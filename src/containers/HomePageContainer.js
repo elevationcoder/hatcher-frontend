@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ShowBundle from "../components/ShowBundle";
 import BundleList from "../components/BundleList";
 import { Route, Switch } from "react-router-dom";
+import Bundles from "../components/Bundles";
 
 class HomePageContainer extends Component {
   componentDidMount() {
@@ -15,15 +16,12 @@ class HomePageContainer extends Component {
       <div className="show-bundle-container">
         <br />
         <Switch>
-          <Route
+          {/* <Route
             path="/egg_bundles/:id"
             render={(routerProps) => (
-              <ShowBundle
-                {...routerProps}
-                egg_bundles={this.props.egg_bundles}
-              />
+              <ShowBundle {...routerProps} egg_bundles={this.egg_bundles} />
             )}
-          />
+          /> */}
           {/* <Route
             exact
             path="/egg_bundles"
@@ -38,10 +36,7 @@ class HomePageContainer extends Component {
             exact
             path="/egg_bundles"
             render={(routerProps) => (
-              <BundleList
-                {...routerProps}
-                egg_bundles={this.props.egg_bundles}
-              />
+              <Bundles {...routerProps} egg_bundles={this.props.egg_bundles} />
             )}
           />
         </Switch>

@@ -5,18 +5,19 @@ const BundleList = (props) => {
   // debugger;
   return (
     <div>
-      {props.egg_bundles.map((bundles) => (
-        <div>
-          <ul>
-            <li key={bundles.id}>
-              <Link to={`/egg_bundles/${bundles.id}`}>
-                {bundles.batch_number}
-              </Link>
-            </li>
-            <li>Breed: {bundles.breed}</li>
-          </ul>
-        </div>
-      ))}
+      {props.egg_bundles &&
+        props.flocks.egg_bundles.map((bundles) => (
+          <div>
+            <ul>
+              <li key={bundles.id}>
+                <Link to={`/egg_bundles/${bundles.id}`}>
+                  {bundles.batch_number}
+                </Link>
+              </li>
+              <li>Initial Temp: {bundles.init_temp}</li>
+            </ul>
+          </div>
+        ))}
     </div>
   );
 };
