@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 
 class NewBundleInput extends Component {
   state = {
+    counter: 0,
     batch_number: "",
     amount: "",
     amount_fertilized: "",
@@ -47,6 +48,7 @@ class NewBundleInput extends Component {
   // BEGIN RENDER OF FORM FIELD
 
   render() {
+    let { count } = this.state;
     return (
       <div className="new-bundle-container">
         <h2>Add a New Bundle Below</h2>

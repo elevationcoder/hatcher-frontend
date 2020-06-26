@@ -6,12 +6,16 @@ import { addFlock } from "../actions/addFlock";
 // RENDERING NEW FLOCK ENTRY AND UPDATING API AND STORE
 
 class NewFlockInput extends Component {
-  state = {
-    name: "",
-    breed: "",
-    quantity: "",
-    diet: "",
-  }; // THIS STATE IS NOT EXPORTED
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      breed: "",
+      quantity: "",
+      diet: "",
+    };
+    this.handleOnSubmit = this.handleOnSubmit.bind(this); // THIS STATE IS NOT EXPORTED
+  }
 
   // FORM CONTROL METHODS
 
@@ -21,7 +25,7 @@ class NewFlockInput extends Component {
     });
   };
 
-  handleOnSubmit = (event) => {
+  handleOnSubmit(event) {
     event.preventDefault();
     this.props.addFlock(this.state);
     this.setState({
@@ -30,7 +34,7 @@ class NewFlockInput extends Component {
       quantity: "",
       diet: "",
     });
-  };
+  }
 
   // START OF FORM RENDERING
   render() {
